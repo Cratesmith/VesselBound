@@ -1,0 +1,12 @@
+{
+    "name": "VesselBound",
+    "version": "Beta v. Spritely Giraffe",
+    "path": ".",
+    "dependencies": [],
+    "metadata": {
+        "description": "TBA",
+        "author": "TBA",
+        "modversion": "TBA",
+        "support-url": "TBA"
+    }
+}

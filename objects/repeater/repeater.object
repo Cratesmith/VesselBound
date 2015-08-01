@@ -1,0 +1,41 @@
+{
+  "objectName" : "repeater",
+  "rarity" : "Common",
+  "description" : "Passes on any objects and liquids",
+  "shortdescription" : "Repeater",
+  "race" : "generic",
+
+  "category" : "wire",
+  "price" : 75,
+  
+  "inventoryIcon" : "/objects/apex/apextablelamp/apextablelampicon.png",
+  "orientations" : [
+    {
+      "image" : "/objects/apex/apextablelamp/apextablelamp.png:<color>.<frame>",
+      "imagePosition" : [0, 0],
+      "frames" : 1,
+      "animationCycle" : 0.3,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "background" ]
+    }
+  ],
+
+  "animation" : "/objects/wired/light/lighttogglebgfullbright.animation",
+  "animationParts" : {
+    "bg" : "/objects/apex/apextablelamp/apextablelamp.png",
+    "fg" : "/objects/apex/apextablelamp/apextablelamplit.png"
+  },
+  "animationPosition" : [0, 0],
+
+
+  "scripts" : [ "/objects/repeater/repeater.lua",
+                "/scripts/pipeUtil.lua",
+                "/scripts/vec2.lua" ],
+
+  "inboundNodes" : [ [-1, 1], 
+                     [-1, 0] ],
+
+  "outboundNodes" : [ [0, 0] ],
+  "scriptDelta" : 60
+}

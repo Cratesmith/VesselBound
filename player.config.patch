@@ -1,0 +1,9 @@
+[ 
+	{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"containerlink"} },
+	{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"filtercategory"} },
+	{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"filterexact"} },
+	{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"filterrace"} },
+	{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"inbox"} },
+	{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"repeater"} },
+	{"op":"add","path":"/defaultBlueprints/tier1/-","value":{"item":"sink"} }
+]

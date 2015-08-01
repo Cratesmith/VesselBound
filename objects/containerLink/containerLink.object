@@ -1,0 +1,57 @@
+{
+  "objectName" : "containerlink",
+  "printable" : false,
+  "rarity" : "Common",
+  "description" : "Links the nearest container to filters and sinks. Upper input is on/off wire. Lower input is item/liquid input. Output is item/liquid output",
+  "shortdescription" : "container link",
+  "race" : "generic",
+
+  "category" : "wire",
+  "price" : 75,
+
+  "inventoryIcon" : "/objects/floran/plantbiolight/plantbiolighticon.png",
+  "orientations" : [
+    {
+      "image" : "/objects/floran/plantbiolight/plantbiolight.png:<frame>", "fullbright" : true,
+      "imagePosition" : [0, 0],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "left", "right" ]
+    },
+
+    {
+      "image" : "/objects/floran/plantbiolight/plantbiolightleft.png:<frame>", "fullbright" : true,
+      "imagePosition" : [0, 0],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "left" ]
+    },
+
+    {
+      "image" : "/objects/floran/plantbiolight/plantbiolightright.png:<frame>", "fullbright" : true,
+      "imagePosition" : [0, 0],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "right" ]
+    },
+
+    {
+      "image" : "/objects/floran/plantbiolight/plantbiolight.png:<frame>", "fullbright" : true,
+      "imagePosition" : [0, 0],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "background" ]
+    }
+  ],
+
+  "scripts" : [ "/objects/containerLink/containerLink.lua",
+                "/scripts/pipeUtil.lua",
+                "/scripts/vec2.lua" ],
+  "scriptDelta" : 5,
+
+  "inboundNodes" : [ [0, 1], 
+                     [0, 0] ],
+  "outboundNodes" : [ [1, 0] ],
+
+  "interval" : 5
+}

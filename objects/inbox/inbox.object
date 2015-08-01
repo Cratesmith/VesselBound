@@ -1,0 +1,41 @@
+{
+  "objectName" : "inbox",
+  "rarity" : "Common",
+  "objectType" : "container",
+  "tooltipKind" : "container",
+
+  "category" : "wire",
+  "price" : 350,
+  "description" : "A place you can put things to send elsewhere.",
+  "shortdescription" : "inbox",
+  "race" : "generic",
+
+  "inventoryIcon" : "/objects/generic/techchest/techchesticon.png",
+    "orientations" : [
+    {
+      "dualImage" : "/objects/generic/3dprinter/3dprinter.png:<color>.0",
+      "imagePosition" : [-16, -8],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "background" ]
+    }
+  ],
+
+  "scripts" : [ "/objects/inbox/inbox.lua",
+                "/scripts/pipeUtil.lua",
+                "/scripts/vec2.lua" ],
+
+  "openSounds" : [ "/sfx/objects/chest_small_open.wav" ],
+  "closeSounds" : [ "/sfx/objects/chest_small_close.wav" ],
+  "slotCount" : 16,
+  "uiConfig" : "/interface/chests/chest%slots%.config",
+  "frameCooldown" : 5,
+  "autoCloseCooldown" : 3600,
+
+  "inboundNodes" : [ [-1, 1], 
+                     [-1, 0] ],
+
+  "outboundNodes" : [ [0, 0] ],
+
+  "interval" : 5
+}
