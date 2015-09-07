@@ -1,0 +1,7 @@
+{
+  "input" : [
+    { "item" : "steelbar", "count" : 1 }
+  ],
+  "output" : { "item" : "filtercategory", "count" : 1 },
+  "groups" : [ "wiringstation", "all" ]
+}

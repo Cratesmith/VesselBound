@@ -1,0 +1,42 @@
+{
+  "objectName" : "filterexact",
+  "rarity" : "Common",
+  "objectType" : "container",
+  "tooltipKind" : "container",
+
+  "category" : "wire",
+  "price" : 350,
+  "description" : "Only items identical to those in this container will be sent onwards.",
+  "shortdescription" : "Filter (exact match)",
+  "race" : "generic",
+
+  "inventoryIcon" : "/objects/glitch/sewergauge/sewergaugeicon.png",
+  "orientations" : [
+
+    {
+      "image" : "/objects/glitch/sewergauge/sewergauge.png:<color>.<frame>",
+      "frames" : 4,
+      "animationCycle" : 0.5,
+      "imagePosition" : [-8, -8],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "background" ]
+    }
+  ],
+
+  "scripts" : [ "/objects/filterExact/filterExact.lua",
+                "/scripts/pipeUtil.lua",
+                "/scripts/vec2.lua" ],
+
+  "openSounds" : [ "/sfx/objects/chest_small_open.wav" ],
+  "closeSounds" : [ "/sfx/objects/chest_small_close.wav" ],
+  "slotCount" : 16,
+  "uiConfig" : "/interface/chests/chest%slots%.config",
+  "frameCooldown" : 5,
+  "autoCloseCooldown" : 3600,
+
+  "inboundNodes" : [ [-1, 1], 
+                     [-1, 0] ],
+
+  "outboundNodes" : [ [0, 0] ]
+}
