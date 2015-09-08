@@ -46,6 +46,7 @@
 
   "scripts" : [ "/objects/containerLink/containerLink.lua",
                 "/scripts/pipeUtil.lua",
+                "/scripts/dumper.lua",
                 "/scripts/vec2.lua" ],
   "scriptDelta" : 5,
 
