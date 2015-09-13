@@ -102,7 +102,7 @@ end
 -- Get the item for any item descriptor
 function pipeUtil.itemConfig(itemDescriptor)
   if itemDescriptor.parameters and itemDescriptor.parameters.itemName then
-    if itemDescriptor.parameters.itemName == "generatedgun" then
+    if itemDescriptor.parameters.generated then
 --      world.logInfo(table.show(itemDescriptor,"itemDescriptor"))
 --        return root.itemConfig({"generatedgun", 1, {definition=itemDescriptor.parameters.name}})
       return nil
