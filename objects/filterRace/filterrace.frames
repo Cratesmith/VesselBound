@@ -1,0 +1,9 @@
+{
+  "frameGrid" : {
+    "size" : [24, 24],
+    "dimensions" : [8, 1],
+    "names" : [
+      [ "default.generic", "default.human", "default.glitch", "default.hylotl", "default.apex", "default.avian", "default.floran", "default.novakid" ]
+    ]
+  }
+}

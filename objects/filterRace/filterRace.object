@@ -1,9 +1,7 @@
 {
   "objectName" : "filterrace",
   "rarity" : "Common",
-  "objectType" : "container",
-  "tooltipKind" : "container",
-
+  
   "category" : "wire",
   "price" : 350,
   "description" : "Only items made by the race of to those in this container will be sent onwards.",
@@ -14,8 +12,8 @@
   "orientations" : [
 
     {
-      "image" : "/objects/glitch/sewergauge/sewergauge.png:<color>.<frame>",
-      "frames" : 4,
+      "image" : "filterrace.png:<color>.generic",
+      "frames" : 8,
       "animationCycle" : 0.5,
       "imagePosition" : [-8, -8],
 
@@ -24,16 +22,19 @@
     }
   ],
 
+  "animation" : "/objects/filterRace/filterrace.animation",
+  "animationParts" : {
+    "portrait" : "filterrace.png"
+  },
+  "animationPosition" : [-8, -8],
+
   "scripts" : [ "/objects/filterRace/filterRace.lua",
                 "/scripts/pipeUtil.lua",
+                "/scripts/dumper.lua",
                 "/scripts/vec2.lua" ],
+  "scriptDelta" : 5,
 
-  "openSounds" : [ "/sfx/objects/chest_small_open.wav" ],
-  "closeSounds" : [ "/sfx/objects/chest_small_close.wav" ],
-  "slotCount" : 16,
-  "uiConfig" : "/interface/chests/chest%slots%.config",
   "frameCooldown" : 5,
-  "autoCloseCooldown" : 3600,
 
   "inboundNodes" : [ [-1, 1], 
                      [-1, 0] ],

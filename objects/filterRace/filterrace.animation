@@ -1,0 +1,101 @@
+{
+  "animatedParts" : {
+    "stateTypes" : {
+      "raceState" : {
+        "default" : "generic",
+        "states" : {
+          "generic" : {
+            "frames" : 1
+          },
+          "human" : {
+            "frames" : 1
+          },
+          "glitch" : {
+            "frames" : 1
+          },
+          "hylotl" : {
+            "frames" : 1
+          },
+          "apex" : {
+            "frames" : 1
+          },
+          "avian" : {
+            "frames" : 1
+          },
+          "floran" : {
+            "frames" : 1
+          },
+          "novakid" : {
+            "frames" : 1
+          }
+        }
+      }
+    },
+
+    "parts" : {
+
+      "portrait" : {
+        "properties" : {
+          "centered" : false
+        },
+
+        "partStates" : {
+          "raceState" : {
+
+            "generic" : {
+              "properties" : {
+                "image" : "<partImage>:<color>.generic"
+              }
+            },
+
+            "human" : {
+              "properties" : {
+                "image" : "<partImage>:<color>.human"
+              }
+            },
+
+            "glitch" : {
+              "properties" : {
+                "image" : "<partImage>:<color>.glitch"
+              }
+            },
+
+            "apex" : {
+              "properties" : {
+                "image" : "<partImage>:<color>.apex"
+              }
+            },
+
+            "hylotl" : {
+              "properties" : {
+                "image" : "<partImage>:<color>.hylotl"
+              }
+            },
+
+            "avian" : {
+              "properties" : {
+                "image" : "<partImage>:<color>.avian"
+              }
+            },
+
+            "floran" : {
+              "properties" : {
+                "image" : "<partImage>:<color>.floran"
+              }
+            },
+
+            "novakid" : {
+              "properties" : {
+                "image" : "<partImage>:<color>.novakid"
+              }
+            }
+
+          }
+
+
+
+        }
+      }
+    }
+  }
+}
