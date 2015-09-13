@@ -7,12 +7,7 @@ function canReceiveItem(itemDescriptor)
     local inRootConfig = root.itemConfig(itemDescriptor.name)
     for _,item in pairs(world.containerItems(entity.id())) do
       local filterRootConfig = root.itemConfig(item.name)
---      world.logInfo(table.show(filterRootConfig,"filterRootConfig"))
---      world.logInfo(table.show(itemDescriptor,"itemDescriptor"))
---      world.logInfo(table.show(item,"item"))
-      world.logInfo(itemDescriptor.name..":"..filterRootConfig.config.category.." "..item.name..":"..filterRootConfig.config.category)
       if inRootConfig.config.category and filterRootConfig.config.category and (inRootConfig.config.category == filterRootConfig.config.category) then 
-        world.logInfo("yes:"..itemDescriptor.name.."("..filterRootConfig.config.category..")")
         return true
       end 
     end
