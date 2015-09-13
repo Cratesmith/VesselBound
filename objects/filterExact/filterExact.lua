@@ -7,7 +7,7 @@ function canReceiveItem(itemDescriptor)
     for _,item in pairs(world.containerItems(entity.id())) do
       if(itemDescriptor.name == item.name) then 
         --entity.say("yes:"..itemDescriptor.name)
-        return true
+        return item.name != "generatedgun"
       end 
     end
   end   

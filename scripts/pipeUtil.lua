@@ -99,6 +99,20 @@ local function spairs(t, order)
     end
 end
 
+-- Get the item for any item descriptor
+function pipeUtil.itemConfig(itemDescriptor)
+  if itemDescriptor.parameters and itemDescriptor.parameters.itemName then
+    if itemDescriptor.parameters.itemName == "generatedgun" then
+--      world.logInfo(table.show(itemDescriptor,"itemDescriptor"))
+--        return root.itemConfig({"generatedgun", 1, {definition=itemDescriptor.parameters.name}})
+      return nil
+    else
+      return root.itemConfig(itemDescriptor.parameters.itemName)
+    end
+  end
+
+  return root.itemConfig(itemDescriptor.name)
+end
 
 -- Returns all output ids as an array
 function pipeUtil.getOutputIds()

@@ -35,26 +35,28 @@ function isActive()
   return not entity.isInboundNodeConnected(0) or entity.getInboundNodeLevel(0) and #pipeUtil.getOutputIds()>0
 end 
 
-function canReceiveItem(itemDescriptor)
-  if isActive() and itemDescriptor~=nil then
-    local race = species[storage.speciesId];
-    local inRootConfig = root.itemConfig(itemDescriptor.name)
-    --world.logInfo(table.show(inRootConfig, "inRootConfig"))
+function getRace(itemDescriptor)
+  local inRootConfig = pipeUtil.itemConfig(itemDescriptor)
 
-    local itemRace = nil
+  if inRootConfig then 
     if inRootConfig.config.race ~= nil then
-      itemRace = inRootConfig.config.race
+      return inRootConfig.config.race
     else 
       for _,v in pairs(species) do
         if string.find(itemDescriptor.name, v) or string.find(inRootConfig.directory, v) then 
-          itemRace = v 
-          break
-        end  
-      end  
+          return v
+        end 
+      end
+    end
+  end
 
-      if itemRace == nil then itemRace="generic" end
-    end  
+  return "generic"
+end
 
+function canReceiveItem(itemDescriptor)
+  if isActive() then
+    local race = species[storage.speciesId];
+    local itemRace = getRace(itemDescriptor)
     return itemRace==race
   end   
 
