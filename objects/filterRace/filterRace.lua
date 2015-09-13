@@ -36,7 +36,7 @@ function isActive()
 end 
 
 function canReceiveItem(itemDescriptor)
-  if isActive() then
+  if isActive() and itemDescriptor~=nil then
     local race = species[storage.speciesId];
     local inRootConfig = root.itemConfig(itemDescriptor.name)
     --world.logInfo(table.show(inRootConfig, "inRootConfig"))
