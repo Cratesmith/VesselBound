@@ -43,18 +43,19 @@ function table.show(t, name, indent)
 
    local function basicSerialize (o)
       local so = tostring(o)
-      if type(o) == "function" then
-         local info = debug.getinfo(o, "S")
-         -- info.name is nil because o is not a calling level
-         if info.what == "C" then
-            return string.format("%q", so .. ", C function")
-         else 
-            -- the information is defined through lines
-            return string.format("%q", so .. ", defined in (" ..
-                info.linedefined .. "-" .. info.lastlinedefined ..
-                ")" .. info.source)
-         end
-      elseif type(o) == "number" or type(o) == "boolean" then
+--      if type(o) == "function" then
+--         local info = debug.getinfo(o, "S")
+--         -- info.name is nil because o is not a calling level
+--         if info.what == "C" then
+--            return string.format("%q", so .. ", C function")
+--         else 
+--            -- the information is defined through lines
+--            return string.format("%q", so .. ", defined in (" ..
+--                info.linedefined .. "-" .. info.lastlinedefined ..
+--                ")" .. info.source)
+--         end
+--      elseif type(o) == "number" or type(o) == "boolean" then
+      if type(o) == "number" or type(o) == "boolean" then
          return so
       else
          return string.format("%q", so)
