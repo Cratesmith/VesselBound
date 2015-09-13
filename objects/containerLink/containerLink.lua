@@ -1,6 +1,6 @@
 function init(args)
   if not virtual then
-    self.prevContainer = storage.containerId
+    self.prevContainer = self.containerId
   end
 end
 
@@ -9,11 +9,11 @@ function isActive()
 end 
 
 function canReceiveItem(itemDescriptor)
-  return isActive() and storage.containerId and world.containerItemsCanFit(storage.containerId, itemDescriptor)>0
+  return isActive() and self.containerId and world.containerItemsCanFit(self.containerId, itemDescriptor)>0
 end
 
 function canReceiveLiquid(liquidId, liquidLevel)
-  return isActive() and storage.containerId
+  return isActive() and self.containerId
 end
 
 function receiveLiquid(liquidId, liquidLevel)
@@ -31,28 +31,28 @@ function receiveLiquid(liquidId, liquidLevel)
 end
 
 function receiveItem(itemDesc)
-  return world.containerAddItems(storage.containerId, itemDesc)
+  return world.containerAddItems(self.containerId, itemDesc)
 end
 
 function send()
   local remaining = {}
-  for _,item in pairs(world.containerItems(storage.containerId)) do
+  for _,item in pairs(world.containerItems(self.containerId)) do
     remaining[#remaining+1] = pipeUtil.sendItem(item)
-    world.containerConsume(storage.containerId, item)
+    world.containerConsume(self.containerId, item)
   end
 
   for _,item in ipairs(remaining) do
-    world.containerAddItems(storage.containerId, item)
+    world.containerAddItems(self.containerId, item)
   end
 end
 
 function findContainer()
-  storage.containerId = nil
+  self.containerId = nil
 
   local objectIds = world.objectQuery(entity.position(), 50, { order = "nearest" })
   for _, objectId in ipairs(objectIds) do
     if world.containerSize(objectId) then
-      storage.containerId = objectId
+      self.containerId = objectId
       break
     end
   end 
@@ -60,15 +60,15 @@ end
 
 
 function checkSayStorageChange( ... )
-  if storage.containerId ~= self.prevContainer then
-    if storage.containerId == nil then
+  if self.containerId ~= self.prevContainer then
+    if self.containerId == nil then
       self.sayText = "disconnected!"
     else 
-      self.sayText = "connted to:"..world.entityName(storage.containerId)
+      self.sayText = "connted to:"..world.entityName(self.containerId)
     end
   end
 
-  self.prevContainer = storage.containerId
+  self.prevContainer = self.containerId
 end
 
 
@@ -78,14 +78,14 @@ function update(dt)
     self.sayText = nil
   end
 
-  if not storage.containerId or not world.entityExists(storage.containerId) then
+  if not self.containerId or not world.entityExists(self.containerId) then
     findContainer() 
   end
 
   checkSayStorageChange()  
   
   if isActive() then
-    if storage.containerId and #pipeUtil.getOutputIds() > 0 then      
+    if self.containerId and #pipeUtil.getOutputIds() > 0 then      
       send()
     end
   end
