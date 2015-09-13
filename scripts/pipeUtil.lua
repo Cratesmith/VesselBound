@@ -124,7 +124,7 @@ function pipeUtil.getOutputIds()
 
   local outputIds = {}
   for _, id in spairs(temp, function(a,b) 
-      return b.dist < a.dist 
+      return b.dist > a.dist 
     end) do 
     table.insert(outputIds, id.id) 
   end
