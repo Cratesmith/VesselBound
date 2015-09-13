@@ -40,16 +40,22 @@ function canReceiveItem(itemDescriptor)
     local race = species[storage.speciesId];
     local inRootConfig = root.itemConfig(itemDescriptor.name)
     --world.logInfo(table.show(inRootConfig, "inRootConfig"))
-    if inRootConfig.config.race ~= nil then
-      return inRootConfig.config.race==race
-    elseif string.find(itemDescriptor.name, race) then
-      return true
-    elseif string.find(inRootConfig.directory, race) then
-      return true
-    else 
-      return false
-    end
 
+    local itemRace = nil
+    if inRootConfig.config.race ~= nil then
+      itemRace = inRootConfig.config.race
+    else 
+      for _,v in pairs(species) do
+        if string.find(itemDescriptor.name, v) or string.find(inRootConfig.directory, v) then 
+          itemRace = v 
+          break
+        end  
+      end  
+
+      if itemRace == nil then itemRace="generic" end
+    end  
+
+    return itemRace==race
   end   
 
   return false
