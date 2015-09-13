@@ -1,0 +1,9 @@
+{
+  "frameGrid" : {
+    "size" : [24, 24],
+    "dimensions" : [7, 1],
+    "names" : [
+      [ "default.generic", "default.material", "default.tool", "default.weapon", "default.armor", "default.consumable", "default.books" ]
+    ]
+  }
+}

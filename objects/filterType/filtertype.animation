@@ -1,0 +1,95 @@
+{
+  "animatedParts" : {
+    "stateTypes" : {
+      "typeState" : {
+        "default" : "generic",
+        "states" : {
+          "generic" : {
+            "frames" : 1
+          },
+          "material" : {
+            "frames" : 1
+          },
+          "tool" : {
+            "frames" : 1
+          },
+          "armor" : {
+            "frames" : 1
+          },
+          "weapon" : {
+            "frames" : 1
+          },
+          "consumable" : {
+            "frames" : 1
+          },
+          "books" : {
+            "frames" : 1
+          },
+          "novakid" : {
+            "frames" : 1
+          }
+        }
+      }
+    },
+
+    "parts" : {
+
+      "portrait" : {
+        "properties" : {
+          "centered" : false
+        },
+
+        "partStates" : {
+          "typeState" : {
+
+            "generic" : {
+              "properties" : {
+                "image" : "<partImage>:<color>.generic"
+              }
+            },
+
+            "material" : {
+              "properties" : {
+                "image" : "<partImage>:<color>.material"
+              }
+            },
+
+            "tool" : {
+              "properties" : {
+                "image" : "<partImage>:<color>.tool"
+              }
+            },
+
+            "weapon" : {
+              "properties" : {
+                "image" : "<partImage>:<color>.weapon"
+              }
+            },
+
+            "armor" : {
+              "properties" : {
+                "image" : "<partImage>:<color>.armor"
+              }
+            },
+
+            "consumable" : {
+              "properties" : {
+                "image" : "<partImage>:<color>.consumable"
+              }
+            },
+
+            "books" : {
+              "properties" : {
+                "image" : "<partImage>:<color>.books"
+              }
+            }
+
+          }
+
+
+
+        }
+      }
+    }
+  }
+}

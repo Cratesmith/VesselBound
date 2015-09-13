@@ -1,18 +1,18 @@
 {
-  "objectName" : "filterrace",
+  "objectName" : "filtertype",
   "rarity" : "Common",
   
   "category" : "wire",
   "price" : 350,
-  "description" : "Only items made by this race will be sent onwards.",
-  "shortdescription" : "Filter(race)",
+  "description" : "Only items of this type will be sent onwards.",
+  "shortdescription" : "Filter(type)",
   "race" : "generic",
 
   "inventoryIcon" : "/objects/glitch/sewergauge/sewergaugeicon.png",
   "orientations" : [
 
     {
-      "image" : "filterrace.png:<color>.generic",
+      "image" : "filtertype.png:<color>.generic",
       "frames" : 8,
       "animationCycle" : 0.5,
       "imagePosition" : [-8, -8],
@@ -23,13 +23,13 @@
     }
   ],
 
-  "animation" : "/objects/filterRace/filterrace.animation",
+  "animation" : "/objects/filtertype/filtertype.animation",
   "animationParts" : {
-    "portrait" : "filterrace.png"
+    "portrait" : "filtertype.png"
   },
   "animationPosition" : [-8, -8],
 
-  "scripts" : [ "/objects/filterRace/filterRace.lua",
+  "scripts" : [ "/objects/filtertype/filtertype.lua",
                 "/scripts/pipeUtil.lua",
                 "/scripts/dumper.lua",
                 "/scripts/vec2.lua" ],
