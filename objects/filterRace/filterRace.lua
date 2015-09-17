@@ -54,7 +54,7 @@ function getRace(itemDescriptor)
 end
 
 function canReceiveItem(itemDescriptor)
-  if isActive() then
+  if isActive() and itemDescriptor ~= nil then
     local race = species[storage.speciesId];
     local itemRace = getRace(itemDescriptor)
     return itemRace==race

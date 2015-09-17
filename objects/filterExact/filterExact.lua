@@ -3,7 +3,7 @@ function isActive()
 end 
 
 function canReceiveItem(itemDescriptor)
-  if isActive() then
+  if isActive() and itemDescriptor ~= nil then
     for _,item in pairs(world.containerItems(entity.id())) do
       if(itemDescriptor.name == item.name) then 
         --entity.say("yes:"..itemDescriptor.name)
