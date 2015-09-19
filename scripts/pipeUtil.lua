@@ -46,12 +46,15 @@ function pipeUtil.canSendItem(itemDescriptor)
   return false
 end
 
-function pipeUtil.sendItem(itemDescriptor)
+function pipeUtil.sendItem(itemDescriptor, fromId, pathIds)
+  if pathIds==nil then pathIds={} end
+  pathIds[fromId] = #pathIds
+
   local outputIds = pipeUtil.getOutputIds()
   local remainingItems = itemDescriptor
   for _, outputId in ipairs(outputIds) do 
-    if world.callScriptedEntity(outputId, "canReceiveItem", remainingItems) then
-      remainingItems = world.callScriptedEntity(outputId, "receiveItem", remainingItems)
+    if pathIds[outputId]==nil and world.callScriptedEntity(outputId, "canReceiveItem", remainingItems) then
+      remainingItems = world.callScriptedEntity(outputId, "receiveItem", remainingItems, pathIds)
       if not remainingItems then
         break
       end 
@@ -61,12 +64,15 @@ function pipeUtil.sendItem(itemDescriptor)
   return remainingItems
 end
 
-function pipeUtil.sendLiquid(liquidType, liquidLevel)
+function pipeUtil.sendLiquid(liquidType, liquidLevel, fromId, pathIds)
+  if pathIds==nil then pathIds={} end
+  pathIds[fromId] = #pathIds
+
   local outputIds = pipeUtil.getOutputIds()
   local remainingLiquid = liquidLevel
   for _, outputId in ipairs(outputIds) do 
-    if world.callScriptedEntity(outputId, "canReceiveLiquid", liquidType, remainingLiquid) then
-      remainingLiquid = world.callScriptedEntity(outputId, "receiveLiquid", liquidType, remainingLiquid )
+    if pathIds[outputId]==nil and world.callScriptedEntity(outputId, "canReceiveLiquid", liquidType, remainingLiquid) then
+      remainingLiquid = world.callScriptedEntity(outputId, "receiveLiquid", liquidType, remainingLiquid, pathIds )
       if remainingLiquid == 0 then
         break
       end 

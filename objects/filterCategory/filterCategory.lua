@@ -37,10 +37,10 @@ function canReceiveLiquid(liquidId, liquidLevel)
   return canReceiveItem(itemDescriptor)
 end
 
-function receiveItem(itemDesc)
-  return pipeUtil.sendItem(itemDesc)
+function receiveItem(itemDescriptor, pathIds)
+  return pipeUtil.sendItem(itemDescriptor, entity.id(), pathIds)
 end
 
-function receiveLiquid(liquidId, liquidLevel)
-  return pipeUtil.sendLiquid(liquidId, liquidLevel)
+function receiveLiquid(liquidId, liquidLevel, pathIds)
+  return pipeUtil.sendLiquid(liquidId, liquidLevel, entity.id(), pathIds)
 end

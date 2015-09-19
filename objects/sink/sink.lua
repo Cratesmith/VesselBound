@@ -16,12 +16,12 @@ function canReceiveLiquid(liquidId, liquidLevel)
   return isActive()
 end
 
-function receiveLiquid(liquidId, liquidLevel)
+function receiveLiquid(liquidId, liquidLevel, pathIds)
   world.spawnLiquid(entity.position(), liquidId, liquidLevel)
   return nil
 end
 
-function receiveItem(itemDescriptor)
+function receiveItem(itemDescriptor, pathIds)
   local liquidId, liquidLevel = pipeUtil.itemToLiquidIdAndLevel(itemDescriptor)
   if liquidId and liquidLevel then
     world.spawnLiquid(self.drainPos, liquidId, liquidLevel)
@@ -43,7 +43,7 @@ function drainItems()
       local itemPos = world.entityPosition(itemId)
       local takenItem = world.takeItemDrop(itemId, entity.id())
       if takenItem then
-        local remainingItem = pipeUtil.sendItem(takenItem)
+        local remainingItem = pipeUtil.sendItem(takenItem, entity.id())
         if remainingItem then
           world.spawnItem(remainingItem.name, itemPos, remainingItem.count, remainingItem.parameters)
         end
@@ -61,7 +61,7 @@ function drainLiquids()
     local liquidLevel = liquidAt[2]
 
     world.destroyLiquid(self.drainPos)  
-    local remaining = pipeUtil.sendLiquid(liquidId, liquidLevel)
+    local remaining = pipeUtil.sendLiquid(liquidId, liquidLevel, entity.id())
     if remaining then
       world.spawnLiquid(entity.position(), liquidId, remaining)
     end
