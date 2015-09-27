@@ -16,7 +16,7 @@ function getCategory(itemDescriptor)
 end
 
 function canReceiveItem(itemDescriptor)
-  if isActive() then
+  if isActive() and itemDescriptor ~= nil then
     local itemCategory = getCategory(itemDescriptor)
     
     if itemCategory then
