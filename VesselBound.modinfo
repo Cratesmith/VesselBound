@@ -1,12 +1,13 @@
 {
     "name": "VesselBound",
-    "version": "Beta v. Spritely Giraffe",
+    "version": "0.01a",
     "path": ".",
     "dependencies": [],
     "metadata": {
-        "description": "TBA",
-        "author": "TBA",
-        "modversion": "TBA",
-        "support-url": "TBA"
+        "description": "Item and liquid sorting, based on the system used in Vessel",
+        "author": "Cratesmith",
+        "modversion": "0.01a",
+        "link": "https://github.com/Cratesmith/VesselBound"
+        "name": "VesselBound"
     }
 }
