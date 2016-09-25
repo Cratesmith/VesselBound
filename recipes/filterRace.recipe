@@ -3,5 +3,5 @@
     { "item" : "steelbar", "count" : 1 }
   ],
   "output" : { "item" : "filterrace", "count" : 1 },
-  "groups" : [ "wiringstation", "all" ]
+  "groups" : [ "craftingwiring", "mechanics" ]
 }

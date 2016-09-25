@@ -57,6 +57,7 @@ function canReceiveItem(itemDescriptor)
   if isActive() and itemDescriptor ~= nil then
     local race = species[storage.speciesId];
     local itemRace = getRace(itemDescriptor)
+    --object.say("selector:"..race.." vs ".."item:"..itemRace)
     return itemRace==race
   end   
 
