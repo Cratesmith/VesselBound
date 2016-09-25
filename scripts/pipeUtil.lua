@@ -109,7 +109,7 @@ end
 function pipeUtil.itemConfig(itemDescriptor)
   if itemDescriptor.parameters and itemDescriptor.parameters.itemName then
     if itemDescriptor.parameters.generated then
---      world.logInfo(table.show(itemDescriptor,"itemDescriptor"))
+--      sb.logInfo(table.show(itemDescriptor,"itemDescriptor"))
 --        return root.itemConfig({"generatedgun", 1, {definition=itemDescriptor.parameters.name}})
       return nil
     else
@@ -122,7 +122,7 @@ end
 
 -- Returns all output ids as an array
 function pipeUtil.getOutputIds()
-  local outboundIds = entity.getOutboundNodeIds(0)
+  local outboundIds = object.getOutputNodeIds(0)
   local temp = {}
   for id, tableData in pairs(outboundIds) do 
     table.insert(temp, {id=id, dist=vec2.mag(entity.distanceToEntity(id))}) 

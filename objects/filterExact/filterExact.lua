@@ -1,18 +1,18 @@
 function isActive()
-  return not entity.isInboundNodeConnected(0) or entity.getInboundNodeLevel(0) and #pipeUtil.getOutputIds()>0
+  return not object.isInputNodeConnected(0) or object.getInputNodeLevel(0) and #pipeUtil.getOutputIds()>0
 end 
 
 function canReceiveItem(itemDescriptor)
   if isActive() and itemDescriptor ~= nil then
     for _,item in pairs(world.containerItems(entity.id())) do
       if(itemDescriptor.name == item.name) then 
-        --entity.say("yes:"..itemDescriptor.name)
+        --object.say("yes:"..itemDescriptor.name)
         return not itemDescriptor.parameters or not itemDescriptor.parameters.generated
       end 
     end
   end   
 
-  --entity.say("no:"..itemDescriptor.name)
+  --object.say("no:"..itemDescriptor.name)
   return false
 end
 

@@ -27,7 +27,7 @@ end
 function applyTypeId()
   if storage.typeId==nil then storage.typeId = 1 
   elseif storage.typeId > #types then storage.typeId = 1 end  
-  entity.setAnimationState("typeState", types[storage.typeId].group)
+  animator.setAnimationState("typeState", types[storage.typeId].group)
 end
 
 function nextTypeId()
@@ -37,19 +37,19 @@ function nextTypeId()
 end 
 
 function activate()
---  world.logInfo("activating!")
-  entity.setInteractive(true)
+  --sb.logInfo("activating!")  
+  object.setInteractive(true)
   applyTypeId()
 end
 
 function onInteraction(args)
---  world.logInfo("interaction")
+  sb.logInfo("interaction")
   nextTypeId()
---  entity.say(types[storage.typeId])
+  --object.say(types[storage.typeId])
 end
 
 function isActive()
-  return not entity.isInboundNodeConnected(0) or entity.getInboundNodeLevel(0) and #pipeUtil.getOutputIds()>0
+  return not object.isInputNodeConnected(0) or object.getInputNodeLevel(0) and #pipeUtil.getOutputIds()>0
 end 
 
 function getType(itemDescriptor)

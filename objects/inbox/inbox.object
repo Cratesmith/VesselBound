@@ -13,7 +13,7 @@
   "inventoryIcon" : "/objects/generic/techchest/techchesticon.png",
     "orientations" : [
     {
-      "dualImage" : "/objects/generic/3dprinter/3dprinter.png:<color>.0",
+      "dualImage" : "/objects/generic/techchest/techchest.png:<color>.0",
       "imagePosition" : [-16, -8],
 
       "spaceScan" : 0.1,
@@ -28,14 +28,14 @@
   "openSounds" : [ "/sfx/objects/chest_small_open.wav" ],
   "closeSounds" : [ "/sfx/objects/chest_small_close.wav" ],
   "slotCount" : 16,
-  "uiConfig" : "/interface/chests/chest%slots%.config",
+  "uiConfig" : "/interface/chests/chest<slots>.config",
   "frameCooldown" : 5,
   "autoCloseCooldown" : 3600,
 
-  "inboundNodes" : [ [-1, 1], 
-                     [-1, 0] ],
+  "inputNodes" : [ [-1, 1], 
+                 [-1, 0] ],
 
-  "outboundNodes" : [ [0, 0] ],
+  "outputNodes" : [ [0, 0] ],
 
   "interval" : 5
 }

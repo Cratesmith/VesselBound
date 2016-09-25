@@ -36,8 +36,8 @@
   "frameCooldown" : 5,
   "autoCloseCooldown" : 3600,
 
-  "inboundNodes" : [ [-1, 1], 
+  "inputNodes" : [ [-1, 1], 
                      [-1, 0] ],
 
-  "outboundNodes" : [ [0, 0] ]
+  "outputNodes" : [ [0, 0] ]
 }

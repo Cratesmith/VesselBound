@@ -10,7 +10,7 @@ end
 function applySpeciesId()
   if storage.speciesId==nil then storage.speciesId = 1 
   elseif storage.speciesId > #species then storage.speciesId = 1 end  
-    entity.setAnimationState("raceState", species[storage.speciesId])
+    animator.setAnimationState("raceState", species[storage.speciesId])
 end
 
 function nextSpeciesId()
@@ -20,19 +20,19 @@ function nextSpeciesId()
 end 
 
 function activate()
---  world.logInfo("activating!")
-  entity.setInteractive(true)
+--  sb.logInfo("activating!")
+  object.setInteractive(true)
   applySpeciesId()
 end
 
 function onInteraction(args)
---  world.logInfo("interaction")
+--  sb.logInfo("interaction")
   nextSpeciesId()
---  entity.say(species[storage.speciesId])
+--  object.say(species[storage.speciesId])
 end
 
 function isActive()
-  return not entity.isInboundNodeConnected(0) or entity.getInboundNodeLevel(0) and #pipeUtil.getOutputIds()>0
+  return not object.isInputNodeConnected(0) or object.getInputNodeLevel(0) and #pipeUtil.getOutputIds()>0
 end 
 
 function getRace(itemDescriptor)

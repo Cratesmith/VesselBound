@@ -49,10 +49,10 @@
                 "/scripts/vec2.lua" ],
   "scriptDelta" : 5,
 
-  "inboundNodes" : [ [0, 1], 
+  "inputNodes" : [ [0, 1], 
                      [0, 0] ],
                      
-  "outboundNodes" : [ [1, 0] ],
+  "outputNodes" : [ [1, 0] ],
 
   "interval" : 5
 }

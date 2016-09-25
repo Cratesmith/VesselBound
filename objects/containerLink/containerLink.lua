@@ -5,7 +5,7 @@ function init(args)
 end
 
 function isActive()
-  return not entity.isInboundNodeConnected(0) or entity.getInboundNodeLevel(0)
+  return not object.isInputNodeConnected(0) or object.getInputNodeLevel(0)
 end 
 
 function canReceiveItem(itemDescriptor)
@@ -74,7 +74,7 @@ end
 
 function update(dt)
   if self.sayText ~= nil then
-    entity.say(self.sayText)
+    object.say(self.sayText)
     self.sayText = nil
   end
 
