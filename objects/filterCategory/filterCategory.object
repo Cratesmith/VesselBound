@@ -26,6 +26,7 @@
 
   "scripts" : [ "/objects/filterCategory/filterCategory.lua",
                 "/scripts/pipeUtil.lua",
+                "/scripts/itemUtil.lua",
                 "/scripts/dumper.lua",
                 "/scripts/vec2.lua" ],
 

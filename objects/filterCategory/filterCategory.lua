@@ -2,26 +2,26 @@ function isActive()
   return not object.isInputNodeConnected(0) or object.getInputNodeLevel(0) and #pipeUtil.getOutputIds()>0
 end 
 
-function getCategory(itemDescriptor)
-  if itemDescriptor.parameters and itemDescriptor.parameters.itemName == "generatedgun" then
-    return itemDescriptor.parameters.weaponType
-  end
-
-  local inRootConfig = pipeUtil.itemConfig(itemDescriptor)
-  if inRootConfig then
-    return inRootConfig.config.category  
-  end 
-  
-  return nil
-end
+--function getCategory(itemDescriptor)
+--  if itemDescriptor.parameters and itemDescriptor.parameters.itemName == "generatedgun" then
+--    return itemDescriptor.parameters.weaponType
+--  end
+--
+--  local inRootConfig = pipeUtil.itemConfig(itemDescriptor)
+--  if inRootConfig then
+--    return inRootConfig.config.category  
+--  end 
+--  
+--  return nil
+--end
 
 function canReceiveItem(itemDescriptor)
   if isActive() and itemDescriptor ~= nil then
-    local itemCategory = getCategory(itemDescriptor)
+    local itemCategory = itemUtil.getCategory(itemDescriptor)
     
     if itemCategory then
       for _,item in pairs(world.containerItems(entity.id())) do
-        if getCategory(item)==itemCategory then 
+        if itemUtil.getCategory(item)==itemCategory then 
           return true
         end 
       end
