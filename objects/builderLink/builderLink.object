@@ -1,10 +1,12 @@
 {
   "objectName" : "builderlink",
-  "printable" : false,
+  "printable" : true,
   "rarity" : "Common",
   "description" : "",
   "shortdescription" : "builder link",
   "race" : "generic",
+  "objectType" : "container",
+  "tooltipKind" : "container",
 
   "category" : "wire",
   "price" : 75,
@@ -49,11 +51,18 @@
                 "/scripts/itemUtil.lua",
                 "/scripts/dumper.lua",
                 "/scripts/vec2.lua" ],
-  "scriptDelta" : 5,
+  "scriptDelta" : 1000,
+
+  "openSounds" : [ "/sfx/objects/chest_small_open.wav" ],
+  "closeSounds" : [ "/sfx/objects/chest_small_close.wav" ],
+  "slotCount" : 16,
+  "uiConfig" : "/interface/chests/chest<slots>.config",
+  "frameCooldown" : 5,
+  "autoCloseCooldown" : 3600,
 
   "inputNodes" : [ [0, 1], 
                      [0, 0] ],
   "outputNodes" : [ [1, 0] ],
 
-  "interval" : 5
+  "interval" : 1000
 }
